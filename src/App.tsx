@@ -53,7 +53,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-black min-h-screen">
+      <div className="bg-black min-h-screen min-w-96">
         <div className="bg-black relative flex h-[250px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
           <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
             <TypingAnimation className="text-white">AI Content Detector</TypingAnimation>
@@ -65,9 +65,9 @@ function App() {
           />
         </div>
         <div className="flex flex-col max-w-full items-center justify-center">
-          <div className="relative flex h-48 w-1/2 flex-col items-center justify-center overflow-hidden rounded-lg border border-1 bg-transparent md:shadow-xl">
+          <div className="relative flex h-48 w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-700 bg-transparent md:shadow-xl">
             <Textarea
-              placeholder="Type your message here."
+              placeholder="Enter your input text."
               required
               value={text}
               onChange={(e) => setText(e.target.value)}
