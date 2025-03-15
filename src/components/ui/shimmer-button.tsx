@@ -16,7 +16,7 @@ export interface ShimmerButtonProps
 const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
   (
     {
-      shimmerColor = "#ffffff",
+      shimmerColor = "#9c40ff",
       shimmerSize = "0.05em",
       shimmerDuration = "3s",
       borderRadius = "100px",
@@ -73,7 +73,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
             "transform-gpu transition-all duration-300 ease-in-out",
 
             // on hover
-            "group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]",
+            "group-hover:shadow-[inset_0_-6px_10px_#ffaa40]",
 
             // on click
             "group-active:shadow-[inset_0_-10px_10px_#ffffff3f]",

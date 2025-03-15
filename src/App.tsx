@@ -8,6 +8,8 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import './App.css'
+import { TextAnimate } from "./components/magicui/text-animate";
+import Footer from './Footer'
 
 interface Response {
   aiWords: number;
@@ -46,26 +48,40 @@ function App() {
       });
   };
 
-  const handleDetect = () => {
+  const handleDetect = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     detect();
     setDisabled(true);
   };
 
   return (
     <>
-      <div className="bg-black min-h-screen min-w-96">
-        <div className="bg-black relative flex h-[250px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
-          <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
-            <TypingAnimation className="text-white">AI Content Detector</TypingAnimation>
+      <div className="bg-black min-h-screen py-10 max-w-full overflow-hidden">
+
+        <div className=" bg-black relative flex h-auto py-8 gap-10 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+
+          <p className="z-10 whitespace-pre-wrap text-center text-9xl font-medium tracking-tighter text-black dark:text-white">
+            <TypingAnimation className="text-white text-6xl">Detectly</TypingAnimation>
           </p>
-          <DotPattern
-            className={cn(
-              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
-            )}
-          />
+          <p className="z-10 whitespace-pre-wrap text-center text-md px-4 font-normal max-w-screen-md tracking-tighter text-black dark:text-white">
+            <TextAnimate animation="blurIn" as="h3" className='text-white text-xl'>
+              "AI or Human? Detect Content Instantly!"
+            </TextAnimate>
+            <TextAnimate animation="blurIn" as="h4" className='text-gray-300 font-light'>
+             
+              Ensure authenticity with our powerful AI Content Detector. Paste your text, get real-time results, and uncover whether it’s human-written or AI-generated. Perfect for creators, educators, and businesses who value originality and credibility.
+              
+            </TextAnimate>
+            <TextAnimate animation="blurIn" as="h4" className='text-white font-bold py-3'>
+             
+              Try It Free Today!
+            </TextAnimate>
+          </p>
+
         </div>
-        <div className="flex flex-col max-w-full items-center justify-center">
-          <div className="relative flex h-48 w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-700 bg-transparent md:shadow-xl">
+
+        <div className="flex flex-col max-w-full items-center justify-center py-10 md:py-10">
+          <div className="relative flex h-48  w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-700 bg-transparent md:shadow-xl ">
             <Textarea
               placeholder="Enter your input text."
               required
@@ -102,9 +118,9 @@ function App() {
             >
               {disabled ? (
                 <div className="flex flex-row gap-2">
-                  <div className="w-4 h-4 rounded-full bg-yellow-100 animate-bounce [animation-delay:.7s]"></div>
-                  <div className="w-4 h-4 rounded-full bg-yellow-100 animate-bounce [animation-delay:.3s]"></div>
-                  <div className="w-4 h-4 rounded-full bg-yellow-100 animate-bounce [animation-delay:.7s]"></div>
+                  <div className="w-4 h-4 rounded-full bg-yellow-400 animate-bounce [animation-delay:.7s]"></div>
+                  <div className="w-4 h-4 rounded-full bg-purple-500 animate-bounce [animation-delay:.3s]"></div>
+                  <div className="w-4 h-4 rounded-full bg-yellow-400 animate-bounce [animation-delay:.7s]"></div>
                 </div>
               ) : (
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -112,7 +128,9 @@ function App() {
                 </span>
               )}
             </ShimmerButton>
+            
           </div>
+          <Footer />
         </div>
       </div>
     </>
