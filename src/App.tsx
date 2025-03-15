@@ -3,8 +3,6 @@ import axios from 'axios';
 import { NeonGradientCard } from './components/ui/neon-gradient-card';
 import { Textarea } from "@/components/ui/textarea"
 import TypingAnimation from "@/components/ui/typing-animation";
-import { cn } from "@/lib/utils";
-import { DotPattern } from "@/components/ui/dot-pattern";
 import { BorderBeam } from "@/components/ui/border-beam";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import './App.css'
